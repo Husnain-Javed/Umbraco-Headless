@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MCDAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af8ce66d786143fe5c1b9f28424e30dcb59896b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MCDAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MCDAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
