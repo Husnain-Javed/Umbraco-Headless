@@ -1,0 +1,92 @@
+[
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "GetAboutUs",
+    "RelativePath": "api/Umbraco/GetAboutUs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "GetAppMenu",
+    "RelativePath": "api/Umbraco/GetAppMenu",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "GetNavigation",
+    "RelativePath": "api/Umbraco/GetHomePage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "Getlanguages",
+    "RelativePath": "api/Umbraco/Getlanguages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "GetLeaders",
+    "RelativePath": "api/Umbraco/GetLeaders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "GetSpecialAlert",
+    "RelativePath": "api/Umbraco/GetSpecialAlert",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.Umbraco_Data_API",
+    "Method": "GetTranslations",
+    "RelativePath": "api/Umbraco/GetTranslations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MCDAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MCDAPI.WeatherForecast, MCDAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

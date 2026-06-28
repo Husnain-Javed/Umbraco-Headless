@@ -1,0 +1,7 @@
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\MCDAPI.exe
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\appsettings.Development.json
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\appsettings.json
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\MCDAPI.dll
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\MCDAPI.deps.json
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\MCDAPI.runtimeconfig.json
+D:\ENWITS\MCD\MCD Website\Umbraco\MyCustomUmbracoProject\MCDAPI\obj\Release\net10.0\PubTmp\Out\MCDAPI.pdb
