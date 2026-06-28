@@ -1,0 +1,188 @@
+<button
+  class="icon-btn acc-btn"
+  aria-label="Accessibility options"
+
+  (mouseenter)="showPanel()"
+  (mouseleave)="hidePanel()">
+
+  <i class="bi bi-person-arms-up"></i>
+
+</button>
+
+<div
+  class="row gap-3 p-3 panel"
+  #accPanel
+  role="dialog"
+  aria-label="Accessibility settings"
+
+  [class.show]="showAccessibility"
+
+  (mouseenter)="showPanel()"
+
+  (mouseleave)="hidePanel()">
+
+
+    <div class="col-12 p-0">
+
+        <div class="row-label">
+
+            <i class="bi bi-globe">
+                &nbsp; {{ 'Font size' | translate}}   
+            </i>
+
+
+            <div class="row-ctrl">
+
+                <button
+                  class="step-btn"
+                  aria-label="Decrease font size"
+                  (click)="decreaseFont()">
+                    −
+                </button>
+
+
+                <span class="val">
+                    {{fontSize}}%
+                </span>
+
+
+                <button
+                  class="step-btn"
+                  aria-label="Increase font size"
+                  (click)="increaseFont()">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="col-12 p-0">
+
+        <div class="row-label">
+
+            <i class="bi bi-globe">
+                &nbsp; {{ 'High contrast' | translate}}   
+            </i>
+
+
+            <label class="toggle"
+                   aria-label="Toggle high contrast">
+
+                <input
+                  type="checkbox"
+                  (change)="toggleContrast($event)">
+
+                <span class="slider-track"></span>
+
+            </label>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="col-12 p-0">
+
+        <div class="row-label">
+
+            <i class="bi bi-globe">
+                &nbsp; {{ 'Dark Mode' | translate}}  
+            </i>
+
+
+            <label class="toggle"
+                   aria-label="Toggle dark mode">
+
+
+                <input
+                  type="checkbox"
+                  (change)="toggleDark($event)">
+
+
+                <span class="slider-track"></span>
+
+            </label>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="col-12 p-0">
+
+
+        <div class="row-label">
+
+
+            <i class="bi bi-globe">
+                &nbsp; {{ 'Letter spacing' | translate}} 
+            </i>
+
+
+
+            <div class="row-ctrl">
+
+
+                <button
+                  class="step-btn"
+                  aria-label="Decrease letter spacing"
+                  (click)="decreaseSpacing()">
+                    −
+                </button>
+
+
+
+                <span class="val">
+                    {{spacing}}px
+                </span>
+
+
+
+                <button
+                  class="step-btn"
+                  aria-label="Increase letter spacing"
+                  (click)="increaseSpacing()">
+                    +
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="col-12 p-0">
+
+
+        <button
+          class="btn-view-all text-center w-100"
+          (click)="reset()">
+{{ 'Reset all settings' | translate}}
+            
+
+        </button>
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,60 @@
+   <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container-fluid px-5">
+            <div class="row g-4">
+
+
+                @if(FooterSection()?.children?.length){
+
+  @for (item of FooterSection().children; track $index) {
+
+    <div class="col-md-4">
+
+      <h5>{{ item?.properties?.fql_ceategoryTitle }}</h5>
+
+      <ul class="footer-list">
+
+        @for (subhead of item.children; track $index) {
+
+          <li>
+            <a href="#">
+              <i class="bi bi-chevron-right"></i>
+              {{ subhead?.properties?.fqli_linkTitle }}
+            </a>
+          </li>
+
+        }
+
+      </ul>
+
+    </div>
+
+  }
+
+}
+           
+     
+                <div class="col-md-4">
+                  
+                    <h5>{{FooterSection().properties?.contactUsLabel}}</h5>
+                    <ul class="footer-list">
+                        <li><i class="bi bi-telephone"></i> {{FooterSection().properties?.contactNo1}}</li>
+                        <li><i class="bi bi-geo-alt"></i> {{FooterSection().properties?.contactus_address}}</li>
+                        <li><i class="bi bi-geo-alt"></i> {{FooterSection().properties?.contactus_address2}}</li>
+                        <li><i class="bi bi-envelope"></i>{{FooterSection().properties?.emailAddress}}</li>
+                        <li><i class="bi bi-clock"></i>{{FooterSection().properties?.timing}}</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider" />
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                </div>
+                <small class="copyright">{{FooterSection().properties?.copyright}} <a href="#">ENWITS</a></small>
+            </div>
+        </div>
+    </footer>

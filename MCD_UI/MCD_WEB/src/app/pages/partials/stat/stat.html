@@ -1,0 +1,28 @@
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container-fluid px-5">
+            <div class="row text-center">
+                @if (StatCollection()?.children) {
+
+          @for (item of StatCollection()?.children; track item; let i = $index) {
+            
+                
+                 <div class="col-md-3 py-3 stat-item" data-aos="zoom-in" [attr.data-aos-delay]="i * 100" >
+                    <div class="stat-icon" [innerHTML]="sanitizeSVG(item.properties?.stat_svg)">
+                        
+              
+                    </div>
+                    <!-- <div class="stat-value" data-count="item.properties?.stat_number">0</div> -->
+                    <div class="stat-value" [attr.data-count]="item.properties?.stat_number">0</div>
+                    <div class="stat-label">{{item.properties?.stat_label  }}</div>
+                </div>
+            
+            }
+                }
+                
+                
+              
+                
+            </div>
+        </div>
+    </section>

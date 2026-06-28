@@ -1,0 +1,29 @@
+
+
+      <div class="loader-overlay" id="app-loader">
+        <div class="logo-wrap">
+            <div class="glow-ring"></div>
+            <div class="glow-ring"></div>
+            <div class="glow-ring"></div>
+            <img class="logo-img" [src]="getMediaUrl(Home().properties?.logo[0].url)" alt="MCD Logo">
+        </div>
+        <div class="loading-text">Loading</div>
+        <div class="progress-track">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+<app-header [ApplicationMenu]="AppMenu()" [HomePage] =  "Home()"></app-header>
+
+<router-outlet />
+
+  <app-mobile-app [MobileAppSection] ="MobileApp()"></app-mobile-app>
+
+
+ <app-footer [FooterSection]="Footer()"></app-footer>
+
+
+
+
+
+

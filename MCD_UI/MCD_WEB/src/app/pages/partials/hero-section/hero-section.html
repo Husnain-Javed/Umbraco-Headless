@@ -1,0 +1,59 @@
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <img [src]="getMediaUrl(HomePage().properties?.banner[0]?.url)"
+            alt="getMediaUrl(HomePage().properties?.banner[0]?.url)" class="hero-bg" />
+        <div class="container-fluid px-5 hero-content">
+            <div class="row">
+                <div class="col-lg-7" data-aos="fade-up">
+                    <h5 class="hero-eyebrow">{{HomePage().properties?.sliderHeading}}</h5>
+                    <h1 class="hero-title">{{HomePage().properties?.sliderHeading2}}</h1>
+                    <p class="hero-text">
+                        {{HomePage().properties?.sliderDescription}}
+                    </p>
+
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <a href="#" class="btn btn-primary">{{HomePage().properties?.exploerMoreLabel}}</a>
+
+                        <div class="qr-wrapper">
+                            <button class="btn btn-outline-light btn-qr" aria-label="QR Code">
+                                <i class="bi bi-qr-code"></i>
+                            </button>
+
+                            <div class="qrsectionuprdiv">
+                                <div class="row qrsection p-4">
+                                    <div class="col-5">
+                                        <img class="qrimg" [src]="getMediaUrl(HomePage().properties?.qrCode[0]?.url)" alt="">
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="qrcontent">
+                                            <h6 class="fw-bold">{{HomePage().properties?.downloadLabel}}</h6>
+
+                                            <div class="d-flex gap-3">
+                                                <button type="button" class="w-100 btn btn-outline-primary">
+                                                    <i class="bi bi-apple fs-4"></i>
+                                                </button>
+                                                <button type="button" class="w-100 btn btn-outline-primary">
+                                                    <i class="bi bi-google-play fs-4"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="or-divider">
+                                                <span class="p-2">{{HomePage().properties?.orLabel}}</span>
+                                            </div>
+
+                                            <button type="button" class="w-100 btn btn-primary installapk">
+                                                {{HomePage().properties?.instalApkLabel}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>

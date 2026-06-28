@@ -1,0 +1,20 @@
+  <!-- Hero -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <img [src]="getMediaUrl(Home().properties?.inv_banner[0]?.url)"
+            alt="Hero Background" class="hero-bg" />
+        <div class="container-fluid px-5 hero-content">
+            <div class="row">
+                <div class="col-lg-7" data-aos="fade-up">
+                    <h5 class="hero-eyebrow">{{Home().properties?.inv_welcom}}</h5>
+                    <h1 class="hero-title">{{Home().properties?.inv_portal}}</h1>
+                    <p class="hero-text">
+                       {{Home().properties?.iNvDesc}}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <app-stat [StatCollection]="StatList()"></app-stat>

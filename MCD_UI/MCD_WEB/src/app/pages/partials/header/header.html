@@ -1,0 +1,138 @@
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg site-navbar fixed-top">
+        <div class="container-fluid px-lg-3">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img [src]="getMediaUrl(HomePage().properties?.logo[0].url)" alt="asdasdas">
+            </a>
+            <button class="navbar-toggler text-white navbar-dark" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto gap-2">
+                        <ng-container *ngFor="let item of ApplicationMenu()">
+                        <ng-container *ngIf="!item.children || item.children?.length == 0">
+                            <li >
+                                <a class="nav-link active" [routerLink]="item.properties?.fql_linkUrl | localeLink">
+                                                {{ item.properties?.fql_ceategoryTitle }}
+                                                </a>
+                            </li>
+                                            
+                                            </ng-container>
+
+
+                                                <ng-container *ngIf="item.children && item.children?.length > 0">
+
+
+                          <li class="nav-item dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                         {{ item.properties?.fql_ceategoryTitle }}
+                        </a>
+                       
+                        <ul class="dropdown-menu translateul">
+                        <li *ngFor="let submenu of item.children">
+                                
+                            <a class="dropdown-item" [routerLink]="submenu.properties?.fqli_linkUrl  | localeLink">
+                            {{ submenu.properties?.fqli_linkTitle }}
+                            </a>
+                        </li>
+                        </ul>
+                    </li>
+                    </ng-container>
+                        </ng-container>
+            
+                </ul>
+                <div class="d-flex align-items-center gap-3 nav-icons">
+                    <button (click)="openSearch($event)" class="icon-btn search-btn" aria-label="Search"><i class="bi bi-search"></i></button>
+                    <li class="nav-item dropdown language-parent">
+                        <button class="icon-btn" aria-label="Language" data-bs-toggle="dropdown"
+                            aria-expanded="false"><i class="bi bi-globe"></i></button>
+                        <ul class="dropdown-menu language pt-0 translateul">
+
+                            @for (item of Languges(); track item) {
+                                <li>
+                                <a  
+                                (click)="switchTo(item.urlSegment) ;$event.preventDefault()"
+                                [class.active]="item.urlSegment === current"
+                                class="dropdown-item" href="#">{{item.name}}</a>
+                            </li>
+
+                            }
+                           
+                           
+                     
+                        </ul>
+                    </li>
+                  <app-accessibility></app-accessibility>
+                   
+                   @if (user() && user()!=null) {
+                     <li class="nav-item dropdown language-parent">
+                        <button class="icon-btn" aria-label="Language" data-bs-toggle="dropdown"
+                            aria-expanded="false"><i class="bi bi-person-circle fs-5"></i></button>
+                        <ul class="dropdown-menu language pt-0 logoutdiv translateul">
+                            <li>
+                                <a class="dropdown-item" href="#">Setting</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                   }
+                  @if(user()==null) {
+                    <a  class="btn btn-primary" (click)="ShowLogin()" id="loginBtn">{{ 'Login' | translate}}</a>
+                   }
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    @if(isSearchOpen()){
+    <!-- Search Overlay -->
+    <div class="search-overlay active" id="searchOverlay">
+        <!-- Close Button -->
+        <button type="button" class="close-search" id="closeSearch" (click)="closeSearch()">
+            ✕
+        </button>
+        <!-- Search Form -->
+        <div class="search-overlay-content">
+         
+            <input type="search" id="searchInput" placeholder="{{ 'Type to Search' | translate}}">
+        </div>
+    </div>
+    }
+
+    <!-- Navbar closed -->
+
+
+    @if(ShowLoginDialog()){
+   <div id="loginModal" class="login-modal active ">
+        <div class="login-modal-backdrop"></div>
+        <div class="login-modal-box" data-aos="zoom-in" data-aos-duration="600">
+            <button type="button" class="login-close" id="loginClose" aria-label="Close" (click)="CloseDialog()">
+                <i class="bi bi-x fs-4" ></i>
+            </button>
+            <h2 class="login-title">{{ 'Login' | translate}}</h2>
+            <form id="loginForm" novalidate>
+                <div class="mb-3">
+                    <label for="refNumber" class="login-label">{{ 'Reference Number' | translate}}<span
+                            class="text-danger">*</span></label>
+                    <input type="text" class="form-control login-input" id="Ref" name="Ref" [(ngModel)]="Model.Ref" placeholder="{{ 'Reference Number' | translate}}" />
+                </div>
+                <div class="mb-4">
+                    <label for="loginPassword" class="login-label">{{ 'Password' | translate}}<span class="text-danger">*</span></label>
+                    <input type="password" class="form-control login-input"  id="Pass" name="Pass" [(ngModel)]="Model.Pass" placeholder="********" />
+                </div>
+                <button class="btn login-btn" id="loginbtn" (click)="UserLogin()">{{ 'Login' | translate}}</button>
+            </form>
+            <div class="login-links mt-4">
+                <a href="#">{{ 'Forget Password' | translate}}</a>
+                <a href="#">{{ 'Do not have an Investor Number' | translate}}</a>
+                <a href="#">{{ 'Not Registered' | translate}}</a>
+            </div>
+        </div>
+    </div>
+    }
+        <!-- Login Popup Modal -->
+ 

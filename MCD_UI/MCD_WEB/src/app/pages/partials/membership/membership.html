@@ -1,0 +1,17 @@
+    <!-- Memberships -->
+    <section class="memberships-section">
+        <div class="container-fluid px-5 text-center">
+            <h3 class="memberships-title">{{ClientsList()?.properties?.ms_heading}}</h3>
+            <div class="row align-items-center justify-content-center g-4 mt-4">
+                @if(ClientsList() ){
+                    @for (item of ClientsList().children;  track item; let i = $index) {
+
+                             <div class="col-md-3 py-3 member-logo" data-aos="fade-up" [attr.data-aos-delay]="i * 100" ><img
+                        [src]="getMediaUrl(item?.properties?.client_logo[0]?.url)" alt=""></div>
+                    }
+
+                }
+           
+            </div>
+        </div>
+    </section>

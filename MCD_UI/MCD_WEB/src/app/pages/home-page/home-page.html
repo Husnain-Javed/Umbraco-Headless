@@ -1,0 +1,28 @@
+<app-hero-section [HomePage] =  "Home()"></app-hero-section>
+<app-stat [StatCollection]="StatList()"></app-stat>
+<app-open-account [HomePage] =  "Home()"></app-open-account>
+<app-agm   [MeetingsList]="Meetings()"></app-agm>
+ <app-membership [ClientsList]="Clients()"></app-membership>
+
+
+
+ <div *ngIf="DisplayalertModel()" id="AlertModal" class="login-modal active">
+        <div class="login-modal-backdrop"></div>
+        <div class="login-modal-box" data-aos="zoom-in" data-aos-duration="600">
+            <button type="button" class="login-close" id="alertClose" aria-label="Close" (click)="CloseSpecialalert()">
+                <i class="bi bi-x fs-4"></i>
+            </button>
+            <h2 class="login-title">{{ 'Alert' | translate}}</h2>
+            @if(Specialalert()?.properties?.alert_image){
+
+ <img class="w-100 mb-3" [src]="getMediaUrl(Specialalert()?.properties?.alert_image[0].url)">
+            }
+           
+
+            
+            <p class="text-white" [innerHTML]="transform(Specialalert()?.properties?.alert_text?.markup)"></p>
+        </div>
+    </div>
+
+
+    

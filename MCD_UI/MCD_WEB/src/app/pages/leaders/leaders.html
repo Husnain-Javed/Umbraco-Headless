@@ -1,0 +1,138 @@
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="heropage-overlay"></div>
+        <img [src]="getMediaUrl(Leaders()?.properties?.hero_backgroundImage[0].url)" alt="Hero Background" class="hero-bg" />
+        <div class="container-fluid px-5 py-5 hero-content" data-aos="fade-up">
+            <h1 class="hero-title">{{Leaders()?.properties?.hero_heading}}</h1>
+            <p class="hero-text">
+              {{Leaders()?.properties?.hero_subHeading}}
+            </p>
+        </div>
+    </section>
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-bar">
+        <div class="container-fluid px-5">
+            <a [routerLink]="Leaders()?.properties?.br_homePageurl | localeLink">{{Leaders()?.properties?.br_homePage }}</a><span class="sep">/</span>
+            <a [routerLink]="Leaders()?.properties?.br_aboutUsurl | localeLink">{{Leaders()?.properties?.br_aboutUs }}</a><span class="sep">/</span>
+            <span class="current">{{Leaders()?.properties?.br_currentPage}}</span>
+        </div>
+    </div>
+    <!-- Board of Directors -->
+
+<section class="section-pad">
+    <div class="container-fluid px-5">
+
+        <div class="text-center" data-aos="fade-up">
+            <span class="section-eyebrow">
+                {{ Leaders()?.properties?.boardOfDirectors }}
+            </span>
+
+            <h2 class="section-title">
+                {{ Leaders()?.properties?.governanceOversight }}
+            </h2>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel-container">
+
+            <button
+                class="nav-arrow left"
+                aria-label="Previous"
+                (click)="previous()">
+                ‹
+            </button>
+
+            <div class="carousel-track">
+
+                @if (Leaders()?.children) {
+
+                    @for (
+                        item of Leaders()?.children;
+                        track item.id;
+                        let i = $index
+                    ) {
+
+                        <div
+                            #teamCard
+                            class="team-card">
+
+                            <img
+                                [src]="getMediaUrl(item.properties?.leaderimage?.[0]?.url)"
+                                [alt]="item.properties?.leadername" />
+
+                        </div>
+                    }
+
+                }
+
+            </div>
+
+            <button
+                class="nav-arrow right"
+                aria-label="Next"
+                (click)="next()">
+                ›
+            </button>
+
+        </div>
+
+       
+        <!-- Member Info -->
+@if (Leaders()?.children?.length) {
+  <div class="member-info text-center mt-4 z-2">
+
+    <h2 class="member-name">
+      {{ Leaders()?.children[currentIndex()]?.properties?.leadername }}
+    </h2>
+
+    <p class="member-role mb-0">
+      {{ Leaders()?.children[currentIndex()]?.properties?.leaderdesignation }}
+    </p>
+
+  </div>
+}
+
+<!-- Dots -->
+<div class="d-flex gap-3 mt-4 z-2 justify-content-center">
+  @if (Leaders()?.children) {
+    @for (item of Leaders()?.children; track item.id; let i = $index) {
+      <div
+        class="dot"
+        [class.active]="i === currentIndex()"  
+        (click)="goTo(i)">
+      </div>
+    }
+  }
+</div>
+
+    </div>
+</section>
+    
+    <!-- <section class="section-pad">
+        <div class="container-fluid px-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-eyebrow">         {{Leaders()?.properties?.boardOfDirectors}}</span>
+                <h2 class="section-title">         {{Leaders()?.properties?.governanceOversight}}</h2>
+            </div>
+            <div class="row g-4">
+                @if(Leaders()?.children){
+                    @for (item of Leaders()?.children; track item; let i = $index) {
+
+                        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
+                    <div class="leader-card">
+                        <div class="photo"><img
+                                [src]="getMediaUrl(item.properties?.leaderimage[0].url)"
+                                alt="Board member" /></div>
+                        <div class="info">
+                            <h6>{{item.properties?.leadername}}</h6>
+                            <div class="role">{{item.properties?.leaderdesignation}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                    }
+                }
+              
+            </div>
+        </div>
+    </section> -->

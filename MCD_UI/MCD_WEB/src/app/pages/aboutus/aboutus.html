@@ -1,0 +1,116 @@
+  <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="heropage-overlay"></div>
+        <img [src]="getMediaUrl(AboutUs().properties?.banner[0]?.url)" alt="Hero Background" class="hero-bg" />
+        <div class="container-fluid px-5 py-5 hero-content" data-aos="fade-up">
+            <h1 class="hero-title">{{AboutUs().properties?.banner_heading}}</h1>
+            <p class="hero-text">
+               {{AboutUs().properties?.banner_subHeading}}
+        </div>
+    </section>
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-bar">
+        <div class="container-fluid px-5">
+            <a [routerLink]="AboutUs().properties?.homePageurl | localeLink">{{AboutUs().properties?.homePageLable }}</a><span class="sep">/</span>
+            <a [routerLink]="AboutUs().properties?.aboutUsurl | localeLink">{{AboutUs().properties?.aboutUsLabel }}</a><span class="sep">/</span>
+            <span class="current">{{AboutUs().properties?.overviewLabel}}</span>
+        </div>
+    </div>
+    <!-- Who We Are -->
+    <section class="section-pad">
+        <div class="container-fluid px-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="overview-img">
+                        <img [src]="getMediaUrl(AboutUs().properties?.weareimage[0]?.url)"
+                            alt="MCD headquarters" />
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="section-eyebrow">{{AboutUs().properties?.weare}}</span>
+                    <h2 class="section-title">{{AboutUs().properties?.weareheading}}</h2>
+                    <p class="section-lead" [innerHTML]="transform(AboutUs().properties?.wearedescription?.markup)">
+                    </p>
+                  
+                    <div class="d-flex gap-4 mt-4 flex-wrap">
+                        <div>
+                            <h3 class="mb-0 fw-bold text-primary"> {{AboutUs().properties?.weareexpirence}}</h3>
+                            <small class="text-muted"> {{AboutUs().properties?.weareexpirencelbl}}</small>
+                        </div>
+                        <div>
+                            <h3 class="mb-0 fw-bold text-primary">{{AboutUs().properties?.weareinvestoraccount}}</h3>
+                            <small class="text-muted">{{AboutUs().properties?.investorAccountLable}}</small>
+                        </div>
+                        <div>
+                            <h3 class="mb-0 fw-bold text-primary">{{AboutUs().properties?.converage}}</h3>
+                            <small class="text-muted">{{AboutUs().properties?.convergeLabel}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mission & Vision -->
+    <section class="section-pad" style="background:#f5f9fd;">
+        <div class="container-fluid px-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-eyebrow">{{AboutUs().properties?.wearepurpose}}</span>
+                <h2 class="section-title">{{AboutUs().properties?.visionHeading}}</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="mv-card">
+                        <i class="bi bi-bullseye"></i>
+                        <h4>{{AboutUs().properties?.missionHeading}}</h4>
+                        <p>{{AboutUs().properties?.missionDescription}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mv-card alt">
+                        <i class="bi bi-eye"></i>
+                        <h4>{{AboutUs().properties?.visionlabel}}</h4>
+                        <p>{{AboutUs().properties?.visionDescription}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Values -->
+    <section class="section-pad">
+        <div class="container-fluid px-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-eyebrow">{{AboutUs().properties?.driveus}}</span>
+                <h2 class="section-title">{{AboutUs().properties?.coreValueHeading}}</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                    <div class="value-card">
+                        <div class="value-icon"><i [class]="AboutUs().properties?.integrityIcon"></i></div>
+                        <h5>{{AboutUs().properties?.integritylable}}</h5>
+                        <p>{{AboutUs().properties?.integrityDescription}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="value-card">
+                        <div class="value-icon"><i [class]="AboutUs().properties?.innovationIcon"></i></div>
+                        <h5>{{AboutUs().properties?.innovationLabel}}</h5>
+                        <p>{{AboutUs().properties?.innovationDeescription}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="value-card">
+                        <div class="value-icon"><i [class]="AboutUs().properties?.customerFocusIcon"></i></div>
+                        <h5>{{AboutUs().properties?.customerFocusLabel}}</h5>
+                        <p>{{AboutUs().properties?.customerFocusDescription}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="value-card">
+                        <div class="value-icon"><i [class]="AboutUs().properties?.excellenceIcon"></i></div>
+                        <h5>{{AboutUs().properties?.excellenceLabel}}</h5>
+                        <p>{{AboutUs().properties?.excellenceDescriptiopn}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

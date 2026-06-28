@@ -1,0 +1,40 @@
+  <!-- AGM -->
+    <section class="agm-section">
+        <div class="container-fluid px-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="agm-title">{{MeetingsList()?.properties?.r_sectionHeading}}</h2>
+                <a href="#" class="btn btn-view-all">{{MeetingsList()?.properties?.r_viewall}}</a>
+            </div>
+            <div class="row">
+                @if(MeetingsList()?.children && MeetingsList()?.children?.length > 0){
+                           @for (item of MeetingsList()?.children; track item; let i = $index) {
+            
+                 <div class="col-md-4 py-2" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+                    <div class="agm-card">
+                        <div class="agm-date"><strong>{{GetDate(item.properties?.meetingDate)}}</strong><span>{{GetMonth(item.properties?.meetingDate) }}</span></div>
+                        <h5 class="agm-card-title">{{item.properties?.meetingTitle}}</h5>
+                        <div class="agm-tags">
+                            @for (feature of item.properties?.meetingfeatutres; track feature) {
+
+                             <span class="tag">{{feature}}</span>
+                            }
+                     
+                          
+                        </div>
+                        <!-- <div class="agm-tags mt-2">
+                            <span class="tag tag-active">Voting Open</span>
+                            <span class="tag">Election closed</span>
+                        </div> -->
+                    </div>
+                </div>
+
+
+
+               
+            
+            }
+                }
+              
+            </div>
+        </div>
+    </section>

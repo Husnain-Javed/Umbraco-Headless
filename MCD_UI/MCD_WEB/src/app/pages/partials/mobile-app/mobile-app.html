@@ -1,0 +1,38 @@
+    <!-- Mobile App -->
+    <section class="app-section">
+        <div class="container-fluid px-5">
+            <div class="app-banner">
+                <div class="row align-items-center">
+                    <div class="col-md-7 app-text" data-aos="fade-right">
+                        <h2>{{ MobileAppSection().properties?.ma_heading }}</h2>
+                        <p>{{ MobileAppSection().properties?.ma_description }}</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            @for (item of MobileAppSection().children; track $index) {
+
+                                                                    <a href="#" class="store-btn"><i [class]="item.properties?.cta_svg"></i><span><small>{{item.properties?.ctaLabel1}}
+                                        </small><strong>{{item.properties?.cta_label2}}</strong></span></a>
+                            }
+                         
+
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center app-phones" data-aos="fade-left">
+                        <div class="phone phone-front">
+                            <div class="phone-screen">
+                                <div class="phone-logo">
+                                    <img [src]="getMediaUrl(MobileAppSection().properties?.cta_image1[0]?.url)" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone phone-back">
+                            <div class="phone-screen">
+                                <div class="phone-logo">
+                                     <img [src]="getMediaUrl(MobileAppSection().properties?.cta_image2[0]?.url)" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

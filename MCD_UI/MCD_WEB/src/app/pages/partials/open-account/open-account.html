@@ -1,0 +1,40 @@
+   <!-- Investor Service -->
+    <section class="investor-section">
+        <div class="container-fluid px-5">
+            <div class="row">
+                <div class="col-lg-6 py-3" data-aos="fade-right">
+                    <h2 class="section-title">{{HomePage().properties?.op_heading}}</h2>
+                    <p class="section-text">
+                        {{HomePage().properties?.op_description}}
+                    </p>
+                    <a href="#" class="btn btn-primary mt-2">{{HomePage().properties?.cta_op_buttonText}}</a>
+                </div>
+                <div class="col-lg-6 py-3" data-aos="fade-right" data-aos-delay="100">
+                    <h2 class="section-title"> {{HomePage().properties?.sv_heading}}</h2>
+                    <form class="row">
+                        <div class="col-md-6 py-2">
+                            <select class="form-select">
+                                <option>Individual</option>
+                                <option>Corporate</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <select class="form-select">
+                                <option>Omani</option>
+                                <option>Non-Omani</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <input type="text" class="form-control" placeholder="Please enter civil id" />
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <input type="tel" class="form-control" placeholder="Enter your mobile number" />
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary px-4">{{HomePage().properties?.svSeacrchBtn}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
